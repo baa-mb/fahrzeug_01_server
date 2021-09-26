@@ -1,5 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P0, 180)
+    pins.servoWritePin(AnalogPin.P0, 0)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -9,6 +9,7 @@ input.onButtonPressed(Button.A, function () {
         `)
 })
 input.onButtonPressed(Button.AB, function () {
+    basic.showIcon(IconNames.Diamond)
     pins.servoWritePin(AnalogPin.P0, 90)
 })
 radio.onReceivedString(function (receivedString) {
@@ -27,12 +28,19 @@ radio.onReceivedString(function (receivedString) {
     if (receivedString.includes("AB")) {
         control.raiseEvent(
         EventBusSource.MICROBIT_ID_BUTTON_AB,
-        EventBusValue.MICROBIT_BUTTON_EVT_CLICK
+        EventBusValue.MICROBIT_EVT_ANY
         )
     }
 })
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P0, 0)
+    pins.servoWritePin(AnalogPin.P0, 180)
+    basic.showLeds(`
+        . . # . .
+        . # . # .
+        # . . . #
+        . . . . .
+        . . . . .
+        `)
 })
 basic.showIcon(IconNames.Diamond)
 radio.setGroup(54)
