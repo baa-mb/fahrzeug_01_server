@@ -44,5 +44,6 @@ input.onButtonPressed(Button.B, function () {
         . . . . .
         `)
 })
+basic.showString("DENKEN LERNEN")
 basic.showIcon(IconNames.Diamond)
 radio.setGroup(54)
