@@ -28,7 +28,7 @@ radio.onReceivedString(function (receivedString) {
     if (receivedString.includes("AB")) {
         control.raiseEvent(
         EventBusSource.MICROBIT_ID_BUTTON_AB,
-        EventBusValue.MICROBIT_EVT_ANY
+        EventBusValue.MICROBIT_BUTTON_EVT_CLICK
         )
     }
 })
